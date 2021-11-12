@@ -1,0 +1,38 @@
+html {
+  background-color: darkgreen;
+  font-family: sans-serif;
+  color: white;
+  font-size: calc(112.5% + 1vw);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+main {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+section,
+footer {
+  text-align: center;
+  padding: 1em;
+}
+
+a {
+  color: inherit;
+}
+
+p {
+  max-width: 48ch;
+  margin: 1em auto;
+  line-height: 1.5;
+}
+
+span[role="img"] {
+  padding: 0 0.15em;
+}

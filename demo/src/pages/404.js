@@ -4,18 +4,19 @@ import { Link } from "gatsby";
 const NotFoundPage = () => {
   return (
     <main>
-      <header>
+      <section>
         <h1>Page not found</h1>
-      </header>
-      <p>
-        Sorry{" "}
-        <span role="img" aria-label="Pensive emoji">
-          😔
-        </span>{" "}
-        we couldn’t find what you were looking for.
-        <br />
-        <Link to="/">Go home</Link>.
-      </p>
+        <p>
+          Sorry{" "}
+          <span role="img" aria-label="Pensive emoji">
+            😔
+          </span>{" "}
+          we couldn’t find what you were looking for.
+        </p>
+        <small>
+          <Link to="/">Go home</Link>
+        </small>
+      </section>
     </main>
   );
 };
