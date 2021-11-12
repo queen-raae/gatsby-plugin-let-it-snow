@@ -1,0 +1,25 @@
+{
+  "name": "@raae/gatsby-plugin-starter",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "deploy": "cp ../README.md ./README.md && npm publish --access public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/queen-raae/gatsby-plugin-starter.git"
+  },
+  "author": "@raae",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/queen-raae/gatsby-plugin-starter/issues"
+  },
+  "homepage": "https://github.com/raae/gatsby-plugin-starter#readme",
+  "devDependencies": {},
+  "keywords": [
+    "gatsby",
+    "gatsby-plugin",
+    "new.css"
+  ]
+}

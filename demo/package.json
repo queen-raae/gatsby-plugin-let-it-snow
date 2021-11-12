@@ -1,0 +1,23 @@
+{
+  "name": "gatsby-plugin-starter-demo",
+  "version": "1.0.0",
+  "private": false,
+  "description": "@raae/gatsby-plugin-starter demo",
+  "author": "@raae",
+  "keywords": [
+    "gatsby"
+  ],
+  "scripts": {
+    "develop": "gatsby develop",
+    "start": "gatsby develop",
+    "build": "gatsby build",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean"
+  },
+  "dependencies": {
+    "@raae/gatsby-plugin-starter": "^0.0.1",
+    "gatsby": "4.1.4",
+    "react": "17.0.2",
+    "react-dom": "17.0.2"
+  }
+}
