@@ -18,8 +18,7 @@
   "homepage": "https://github.com/raae/gatsby-plugin-let-it-snow#readme",
   "keywords": [
     "gatsby",
-    "gatsby-plugin",
-    "new.css"
+    "gatsby-plugin"
   ],
   "dependencies": {
     "canvas-confetti": "1.4.0"
