@@ -3,6 +3,9 @@
   "version": "0.0.1",
   "description": "",
   "main": "index.js",
+  "scripts": {
+    "postversion": "cp ../README.md ./README.md"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/queen-raae/gatsby-plugin-let-it-snow.git"
