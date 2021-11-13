@@ -1,6 +1,8 @@
 # @raae/gatsby-plugin-let-it-snow
 
-> Amazing plugin that solves everything
+> Add some joy to your site with falling snow ❄️
+
+Heavily inspired by my memory of snow falling on my WordPress blog way back when...
 
 ## How to install
 
@@ -32,4 +34,4 @@ If you find a bug please open an [issue](https://github.com/raae/gatsby-plugin-l
 
 ## Stay updated
 
-Stay updated on the development of this plugin by [subscribing to emails from Queen Raae](https://queen.raae.codes/emails) from [@raae](https://twitter.com/raae).
+Stay updated on the development of this plugin by [subscribing to emails](https://queen.raae.codes/emails) from Queen [@raae](https://twitter.com/raae).
