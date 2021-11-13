@@ -4,6 +4,8 @@
     ["@semantic-release/npm", {
       "pkgRoot": "plugin"
     }],
-    "@semantic-release/git"
+     ["@semantic-release/git", {
+      "assets": ["plugin"]
+    }]
   ]
 }
