@@ -1,3 +1,3 @@
 module.exports = {
-  plugins: ["@raae/gatsby-plugin-starter"],
+  plugins: ["@raae/gatsby-plugin-let-it-snow"],
 };

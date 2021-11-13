@@ -1,5 +1,5 @@
 {
-  "name": "gatsby-plugin-starter-workspaces",
+  "name": "gatsby-plugin-let-it-snow-workspaces",
   "workspaces": [
     "demo",
     "plugin"

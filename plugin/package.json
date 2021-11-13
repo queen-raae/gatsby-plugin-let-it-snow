@@ -1,5 +1,5 @@
 {
-  "name": "@raae/gatsby-plugin-starter",
+  "name": "@raae/gatsby-plugin-let-it-snow",
   "version": "0.0.1",
   "description": "",
   "main": "index.js",
@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/queen-raae/gatsby-plugin-starter.git"
+    "url": "git+https://github.com/queen-raae/gatsby-plugin-let-it-snow.git"
   },
   "author": "@raae",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/queen-raae/gatsby-plugin-starter/issues"
+    "url": "https://github.com/queen-raae/gatsby-plugin-let-it-snow/issues"
   },
-  "homepage": "https://github.com/raae/gatsby-plugin-starter#readme",
+  "homepage": "https://github.com/raae/gatsby-plugin-let-it-snow#readme",
   "keywords": [
     "gatsby",
     "gatsby-plugin",

@@ -1,8 +1,8 @@
 {
-  "name": "gatsby-plugin-starter-demo",
+  "name": "gatsby-plugin-let-it-snow-demo",
   "version": "1.0.0",
   "private": false,
-  "description": "@raae/gatsby-plugin-starter demo",
+  "description": "@raae/gatsby-plugin-let-it-snow demo",
   "author": "@raae",
   "keywords": [
     "gatsby"
@@ -15,7 +15,7 @@
     "clean": "gatsby clean"
   },
   "dependencies": {
-    "@raae/gatsby-plugin-starter": "^0.0.1",
+    "@raae/gatsby-plugin-let-it-snow": "^0.0.1",
     "gatsby": "4.1.4",
     "react": "17.0.2",
     "react-dom": "17.0.2"
