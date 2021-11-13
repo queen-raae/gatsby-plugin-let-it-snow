@@ -16,10 +16,12 @@
     "url": "https://github.com/queen-raae/gatsby-plugin-starter/issues"
   },
   "homepage": "https://github.com/raae/gatsby-plugin-starter#readme",
-  "devDependencies": {},
   "keywords": [
     "gatsby",
     "gatsby-plugin",
     "new.css"
-  ]
+  ],
+  "dependencies": {
+    "canvas-confetti": "1.4.0"
+  }
 }
