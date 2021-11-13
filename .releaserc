@@ -1,0 +1,9 @@
+{
+  "branches": ["main"],
+  "plugins": [
+    ["@semantic-release/npm", {
+      "pkgRoot": "plugin"
+    }],
+    "@semantic-release/git"
+  ]
+}
