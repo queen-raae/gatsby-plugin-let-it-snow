@@ -6,6 +6,14 @@
   ],
   "scripts": {
     "develop": "npm run develop -w demo",
-    "deploy": "npm run deploy -w plugin "
+    "semantic-release": "semantic-release"
+  },
+  "devDependencies": {
+    "semantic-release": "^18.0.0",
+    "@semantic-release/git": "10.0.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/queen-raae/gatsby-plugin-let-it-snow.git"
   }
 }
