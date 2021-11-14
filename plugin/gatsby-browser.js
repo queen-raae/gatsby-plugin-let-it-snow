@@ -2,6 +2,14 @@
 
 import confetti from "canvas-confetti";
 
+export const pluginOptionsSchema = ({ Joi }) => {
+  return Joi.object({
+    colors: Joi.array()
+      .items(Joi.string())
+      .description("Array of hex color values"),
+  });
+};
+
 export const onInitialClientRender = (_, options) => {
   const { colors = ["#ffffff"] } = options;
 
