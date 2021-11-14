@@ -1,5 +1,5 @@
 {
-  "name": "gatsby-plugin-let-it-snow-workspaces",
+  "private": true,
   "workspaces": [
     "demo",
     "plugin"
