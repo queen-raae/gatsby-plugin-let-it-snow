@@ -22,6 +22,19 @@ module.exports = {
 }
 ```
 
+## Options
+
+You can pass an array of colors to use via the plugin options
+
+```
+  {
+    resolve: "@raae/gatsby-plugin-let-it-snow",
+    options: {
+      colors: ["#fff000", "#ff00ff", "#00ff00"],
+    },
+  },
+```
+
 ## How to contribute
 
 ### Questions, Feedback and Suggestions
