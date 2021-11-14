@@ -2,7 +2,7 @@
 export const pluginOptionsSchema = ({ Joi }) => {
   return Joi.object({
     colors: Joi.array()
-      .items(Joi.string())
+      .items(Joi.string().default("#ffffff"))
       .description("Array of hex color values"),
   });
 };
