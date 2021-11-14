@@ -5,7 +5,7 @@
       "pkgRoot": "plugin"
     }],
      ["@semantic-release/git", {
-      "assets": ["plugin"]
+      "assets": ["plugin/package.json"]
     }]
   ]
 }
