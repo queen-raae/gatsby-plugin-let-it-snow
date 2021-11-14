@@ -59,8 +59,6 @@ To get your changes merged into the project create a Pull Request from your fork
 
 ## How to contribute in other ways
 
-> > > > > > > 54b548bee5ce7298511a8cd46ffe8cde891a4343
-
 ### Questions, Feedback and Suggestions
 
 If you have any questions, feedback or suggestions head on over to [discussions](https://github.com/queen-raae/gatsby-plugin-let-it-snow/discussions).
