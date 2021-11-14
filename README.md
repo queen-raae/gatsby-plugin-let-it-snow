@@ -22,7 +22,29 @@ module.exports = {
 }
 ```
 
-## How to contribute
+## How to contribute with code
+
+### Getting started
+
+- Fork the repo
+- Clone your fork
+- Install the packages: `npm install`
+- Run the demo: `npm run develop`
+
+To be able to have both the demo and plugin in the same repo we use [npm workspaces](https://docs.npmjs.com/cli/v7/using-npm/workspaces).
+
+- Plugin code is in the `/plugin` folder,
+- and the demo code is in the `/demo` folder.
+
+### Do your thing
+
+Solve an [issue](https://github.com/queen-raae/gatsby-plugin-let-it-snow/issues) or do something else!
+
+### Create a Pull Request
+
+To get your changes merged into the project create a Pull Request from your fork.
+
+## How to contribute in other ways
 
 ### Questions, Feedback and Suggestions
 
