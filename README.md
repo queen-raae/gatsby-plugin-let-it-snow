@@ -41,10 +41,10 @@ You can pass an array of colors to use via the plugin options
 
 - Fork the repo
 - Clone your fork
-- Install the packages: `npm install`
-- Run the demo: `npm run develop`
+- Install the packages: `yarn install`
+- Run the demo: `yarn develop`
 
-To be able to have both the demo and plugin in the same repo we use [npm workspaces](https://docs.npmjs.com/cli/v7/using-npm/workspaces).
+To be able to have both the demo and plugin in the same repo we use [yarn workspaces](https://classic.yarnpkg.com/lang/en/docs/workspaces/).
 
 - Plugin code is in the `/plugin` folder,
 - and the demo code is in the `/demo` folder.

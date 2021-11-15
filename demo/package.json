@@ -15,7 +15,7 @@
     "clean": "gatsby clean"
   },
   "dependencies": {
-    "@raae/gatsby-plugin-let-it-snow": "^0.0.1",
+    "@raae/gatsby-plugin-let-it-snow": "*",
     "gatsby": "4.1.4",
     "react": "17.0.2",
     "react-dom": "17.0.2"

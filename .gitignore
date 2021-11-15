@@ -8,8 +8,8 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-# Yarn
-yarn.lock
+# Npm
+package.lock
 
 # Gatsby cache and public
 .cache
