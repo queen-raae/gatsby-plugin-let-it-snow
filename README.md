@@ -47,7 +47,7 @@ You can pass a `start` and `end` date to determine when the snow will start and 
     options: {
       season: {
         start: new Date("December 1, 2021 00:00:01"),
-        end: new Date("December 31, 2022 11:59:00"),
+        end: new Date("December 31, 2022 11:59:59"),
       },
     },
   },
