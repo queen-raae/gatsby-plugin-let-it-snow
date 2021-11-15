@@ -3,10 +3,11 @@
 import confetti from "canvas-confetti";
 
 export const onInitialClientRender = (_, options) => {
-  const { colors = ["#ffffff"] } = options;
+  const { colors = ["#ffffff"], season } = options;
 
+  const now = Date.now();
   const duration = 15 * 1000;
-  const animationEnd = Date.now() + duration;
+  const animationEnd = now + duration;
   let skew = 1;
 
   function randomInRange(min, max) {
@@ -14,7 +15,7 @@ export const onInitialClientRender = (_, options) => {
   }
 
   const frame = () => {
-    const timeLeft = animationEnd - Date.now();
+    const timeLeft = animationEnd - now;
     const ticks = Math.max(200, 500 * (timeLeft / duration));
     skew = Math.max(0.8, skew - 0.001);
 
@@ -40,5 +41,14 @@ export const onInitialClientRender = (_, options) => {
     }
   };
 
-  frame();
+  if (season) {
+    if (
+      new Date(now).getTime() >= new Date(season.start).getTime() &&
+      new Date(now).getTime() <= new Date(season.end).getTime()
+    ) {
+      frame();
+    }
+  } else {
+    frame();
+  }
 };

@@ -22,7 +22,9 @@ module.exports = {
 }
 ```
 
-## Options
+## Plugin Options
+
+### Colors
 
 You can pass an array of colors to use via the plugin options
 
@@ -33,6 +35,22 @@ You can pass an array of colors to use via the plugin options
       colors: ["#fff000", "#ff00ff", "#00ff00"],
     },
   },
+```
+
+### Season
+
+You can pass a `start` and `end` date to determine when the snow will start and end
+
+```
+    {
+      resolve: "@raae/gatsby-plugin-let-it-snow",
+      options: {
+        season: {
+          start: new Date("December 1, 2021"),
+          end: new Date("January 1, 2022"),
+        },
+      },
+    },
 ```
 
 ## How to contribute with code
