@@ -53,6 +53,10 @@ You can pass a `start` and `end` date to determine when the snow will start and 
     },
 ```
 
+## Powered by Canvas Confetti 🎉
+
+Under the hood this plugin uses the amazing [Canvas Confetti](https://github.com/catdad/canvas-confetti) by [@kirilv](https://twitter.com/kirilv).
+
 ## How to contribute with code
 
 ### Getting started
