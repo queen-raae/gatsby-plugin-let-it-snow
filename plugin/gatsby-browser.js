@@ -2,7 +2,9 @@
 
 import confetti from "canvas-confetti";
 
-export const onInitialClientRender = () => {
+export const onInitialClientRender = (_, options) => {
+  const { colors = ["#ffffff"] } = options;
+
   const duration = 15 * 1000;
   const animationEnd = Date.now() + duration;
   let skew = 1;
@@ -25,7 +27,7 @@ export const onInitialClientRender = () => {
         // since particles fall down, skew start toward the top
         y: Math.random() * skew - 0.2,
       },
-      colors: ["#ffffff"],
+      colors: [colors[Math.floor(randomInRange(0, colors.length))]],
       shapes: ["circle"],
       gravity: randomInRange(0.4, 0.6),
       scalar: randomInRange(0.4, 1),
