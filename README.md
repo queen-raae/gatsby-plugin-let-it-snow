@@ -42,15 +42,15 @@ You can pass an array of colors to use via the plugin options
 You can pass a `start` and `end` date to determine when the snow will start and end
 
 ```
-    {
-      resolve: "@raae/gatsby-plugin-let-it-snow",
-      options: {
-        season: {
-          start: new Date("December 1, 2021"),
-          end: new Date("January 1, 2022"),
-        },
+  {
+    resolve: "@raae/gatsby-plugin-let-it-snow",
+    options: {
+      season: {
+        start: new Date("December 1, 2021 00:00:01"),
+        end: new Date("December 31, 2022 11:59:00"),
       },
     },
+  },
 ```
 
 ## Powered by Canvas Confetti 🎉
