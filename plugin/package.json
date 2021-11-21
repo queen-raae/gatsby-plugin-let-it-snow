@@ -22,5 +22,8 @@
   ],
   "dependencies": {
     "canvas-confetti": "1.4.0"
+  },
+  "peerDependencies": {
+    "gatsby": "^3.0.0 || ^4.0.0"
   }
 }
