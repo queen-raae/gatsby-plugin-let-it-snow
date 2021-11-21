@@ -4,6 +4,10 @@
 
 Heavily inspired by my memory of snow falling on my WordPress blog way back when...
 
+## A message from Queen [@raae](https://twitter.com/raae)
+
+Learn how to get the most out of Gatsby and **stay updated** on the plugin by [subscribing](https://queen.raae.codes/emails/?utm_source=readme&utm_campaign=let-it-snow) to emails from yours truly.
+
 ## How to install
 
 `npm install @raae/gatsby-plugin-let-it-snow`
@@ -70,7 +74,3 @@ If you have any questions, feedback or suggestions head on over to [discussions]
 ### Bugs
 
 If you find a bug please open an [issue](https://github.com/raae/gatsby-plugin-let-it-snow/issues) and/or create a pull request to fix it.
-
-## Stay updated
-
-Stay updated on the development of this plugin by [subscribing to emails](https://queen.raae.codes/emails/?utm_source=readme&utm_campaign=let-it-snow) from Queen [@raae](https://twitter.com/raae).
