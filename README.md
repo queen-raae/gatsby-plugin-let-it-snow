@@ -39,6 +39,19 @@ You can pass an array of colors to use via the plugin options
   },
 ```
 
+You can choose the intensity of the snow.
+values; "blizzard", "light-snow"
+```
+  {
+    resolve: "@raae/gatsby-plugin-let-it-snow",
+    options: {
+      intensity: "blizzard",
+    },
+  },
+```
+
+
+
 ## Powered by Canvas Confetti 🎉
 
 Under the hood this plugin uses the amazing [Canvas Confetti](https://github.com/catdad/canvas-confetti) by [@kirilv](https://twitter.com/kirilv).
