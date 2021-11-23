@@ -26,9 +26,8 @@ export const onInitialClientRender = (_, options) => {
     }
   
     if ( intensity === 'blizzard' ) {
-      intensityValues.startVelocity= 2;
       intensityValues.gravity = randomInRange(0.4, 5);
-      intensityValues.drift =  randomInRange(-0.4, 10);
+      intensityValues.drift =  randomInRange(-0.4, 20);
     }
   
     if ( intensity === 'light-snow' ) {
@@ -40,6 +39,7 @@ export const onInitialClientRender = (_, options) => {
 
     confetti({
       particleCount: 1,
+      startVelocity: 0,
       ticks: ticks,
       origin: {
         x: Math.random(),
@@ -48,8 +48,8 @@ export const onInitialClientRender = (_, options) => {
       },
       colors: [colors[Math.floor(randomInRange(0, colors.length))]],
       shapes: ["circle"],
-      disableForReducedMotion: true,
       ...intensityValues,
+      disableForReducedMotion: true,
     });
 
     if (timeLeft > 0) {
