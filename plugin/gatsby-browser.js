@@ -4,8 +4,9 @@ import confetti from "canvas-confetti";
 
 export const onInitialClientRender = (_, options) => {
   const { colors = ["#ffffff"] } = options;
+  const { duration = [1 * 1000]} = options;
 
-  const duration = 15 * 1000;
+  //const duration = 15 * 1000;
   const animationEnd = Date.now() + duration;
   let skew = 1;
 
