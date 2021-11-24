@@ -3,7 +3,7 @@
 import confetti from "canvas-confetti";
 
 export const onInitialClientRender = (_, options) => {
-  const { colors = ["#ffffff"] } = options;
+  const { colors = ["#ffffff"], intensity } = options;
 
   const duration = 15 * 1000;
   const animationEnd = Date.now() + duration;
@@ -18,6 +18,24 @@ export const onInitialClientRender = (_, options) => {
     const ticks = Math.max(200, 500 * (timeLeft / duration));
     skew = Math.max(0.8, skew - 0.001);
 
+    const intensityValues = {
+      startVelocity: 0,
+      gravity: randomInRange(0.4, 0.6),
+      scalar: randomInRange(0.4, 1),
+      drift: randomInRange(-0.4, 0.4),
+    };
+
+    if (intensity === "blizzard") {
+      intensityValues.gravity = randomInRange(0.4, 5);
+      intensityValues.drift = randomInRange(-0.4, 20);
+    }
+
+    if (intensity === "light") {
+      intensityValues.gravity = randomInRange(0.1, 0.2);
+      intensityValues.scalar = randomInRange(0.4, 0.6);
+      intensityValues.drift = randomInRange(0, 0);
+    }
+
     confetti({
       particleCount: 1,
       startVelocity: 0,
@@ -29,9 +47,7 @@ export const onInitialClientRender = (_, options) => {
       },
       colors: [colors[Math.floor(randomInRange(0, colors.length))]],
       shapes: ["circle"],
-      gravity: randomInRange(0.4, 0.6),
-      scalar: randomInRange(0.4, 1),
-      drift: randomInRange(-0.4, 0.4),
+      ...intensityValues,
       disableForReducedMotion: true,
     });
 
