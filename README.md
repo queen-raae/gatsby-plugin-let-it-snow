@@ -40,7 +40,8 @@ You can pass an array of colors to use via the plugin options
 ```
 
 You can choose the intensity of the snow.
-values; "regular", "blizzard", "light"
+Accepted values in increasing intensity: "light", "regular" and "blizzard".
+Default value if non given: "regular"
 
 ```
   {
