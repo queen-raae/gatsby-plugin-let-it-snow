@@ -30,7 +30,7 @@ export const onInitialClientRender = (_, options) => {
       intensityValues.drift = randomInRange(-0.4, 20);
     }
 
-    if (intensity === "light-snow") {
+    if (intensity === "light") {
       intensityValues.gravity = randomInRange(0.1, 0.2);
       intensityValues.scalar = randomInRange(0.4, 0.6);
       intensityValues.drift = randomInRange(0, 0);
