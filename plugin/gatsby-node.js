@@ -4,6 +4,8 @@ exports.pluginOptionsSchema = ({ Joi }) => {
     colors: Joi.array()
       .items(Joi.string().default("#ffffff"))
       .description("Array of hex color values"),
-    intensity: Joi.string().valid('light-snow', 'blizzard'),
+    intensity: Joi.string()
+      .valid("regular", "light", "blizzard")
+      .default("regular"),
   });
 };
