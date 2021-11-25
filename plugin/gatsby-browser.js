@@ -3,11 +3,14 @@
 import confetti from "canvas-confetti";
 
 export const onInitialClientRender = (_, options) => {
-  const { colors = ["#ffffff"] } = options;
-  const { duration = [1 * 1000]} = options;
+  const { colors = ["#ffffff"], duration } = options;
+  //const { duration = [1 * 1000]} = options;
 
+
+//  const number = Joi.number();
+  const stopSnowWhenISaySo = duration;
   //const duration = 15 * 1000;
-  const animationEnd = Date.now() + duration;
+  const animationEnd = Date.now() + stopSnowWhenISaySo;
   let skew = 1;
 
   function randomInRange(min, max) {
@@ -16,7 +19,7 @@ export const onInitialClientRender = (_, options) => {
 
   const frame = () => {
     const timeLeft = animationEnd - Date.now();
-    const ticks = Math.max(200, 500 * (timeLeft / duration));
+    const ticks = Math.max(200, 500 * (timeLeft / stopSnowWhenISaySo));
     skew = Math.max(0.8, skew - 0.001);
 
     confetti({

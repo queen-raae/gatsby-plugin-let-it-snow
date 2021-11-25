@@ -5,8 +5,12 @@ exports.pluginOptionsSchema = ({ Joi }) => {
       .items(Joi.string().default("#ffffff"))
       .description("Array of hex color values"),
     duration: Joi.array()
-      .items(Joi.number().default(15 * 1000))
-      .description("Pick a number"),
+      .items(Joi.number().min(3).max(30).integer().required().default(15 * 1000))
+      .description("Pick a number")
   });
 };
+
+
+
+
 
