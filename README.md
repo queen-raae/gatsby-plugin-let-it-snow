@@ -26,15 +26,49 @@ module.exports = {
 }
 ```
 
-## Options
+## Plugin Options
 
-You can pass an array of colors to use via the plugin options
+### Colors
+
+You can pass an array of colors to use via the plugin options.
 
 ```
   {
     resolve: "@raae/gatsby-plugin-let-it-snow",
     options: {
       colors: ["#fff000", "#ff00ff", "#00ff00"],
+    },
+  },
+```
+
+### Intensity
+
+You can choose the intensity of the snow.
+Accepted values in increasing intensity: "light", "regular" and "blizzard".
+Default value if non given: "regular"
+
+```
+  {
+    resolve: "@raae/gatsby-plugin-let-it-snow",
+    options: {
+      intensity: "blizzard",
+    },
+  },
+```
+
+### Season
+
+You can pass a `start` and `end` date to determine when the snow will start and end.
+Note: Year will be ignored, and snow will fall each year within the configured season.
+
+```
+  {
+    resolve: "@raae/gatsby-plugin-let-it-snow",
+    options: {
+      season: {
+        start: new Date("December 1, 2021 00:00:10"),
+        end: new Date("December 31, 2021 23:59:50"),
+      },
     },
   },
 ```

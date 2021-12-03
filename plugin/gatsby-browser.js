@@ -1,12 +1,50 @@
 // https://www.gatsbyjs.com/docs/reference/config-files/gatsby-browser/
 
 import confetti from "canvas-confetti";
+import {
+  addYears,
+  getYear,
+  setYear,
+  isBefore,
+  isWithinInterval,
+  parseISO,
+} from "date-fns";
+
+const isSeason = ({ start, end }) => {
+  try {
+    const currentDate = new Date();
+    const currentYear = getYear(currentDate);
+
+    // Ignore year from config dates
+    const startDate = setYear(parseISO(start), currentYear);
+    let endDate = setYear(parseISO(end), currentYear);
+
+    if (isBefore(endDate, startDate)) {
+      endDate = addYears(endDate, 1);
+    }
+
+    return isWithinInterval(currentDate, {
+      start: startDate,
+      end: endDate,
+    });
+  } catch (error) {
+    console.warn(
+      "Problem with @raae/gatsby-plugin-let-it-snow season configuration:",
+      error.message
+    );
+    return false;
+  }
+};
 
 export const onInitialClientRender = (_, options) => {
-  const { colors = ["#ffffff"], intensity, duration } = options;
+  const { colors, intensity, duration, season } = options;
 
-  // const duration = 15 * 1000;
-  const animationEnd = Date.now() + duration;
+  if (!isSeason(season)) {
+    return;
+  }
+
+  const now = Date.now();
+  const animationEnd = now + duration;
   let skew = 1;
 
   function randomInRange(min, max) {
@@ -14,7 +52,7 @@ export const onInitialClientRender = (_, options) => {
   }
 
   const frame = () => {
-    const timeLeft = animationEnd - Date.now();
+    const timeLeft = animationEnd - now;
     const ticks = Math.max(200, 500 * (timeLeft / duration));
     skew = Math.max(0.8, skew - 0.001);
 
