@@ -56,6 +56,20 @@ Default value if non given: "regular"
   },
 ```
 
+### Duration
+
+You can configure the duration of the snowfall (as seconds).
+Default value if non given: 15
+
+```
+  {
+    resolve: "@raae/gatsby-plugin-let-it-snow",
+    options: {
+      duration: 10,
+    },
+  },
+```
+
 ### Season
 
 You can pass a `start` and `end` date to determine when the snow will start and end.
