@@ -1,3 +1,10 @@
+# [0.5.0](https://github.com/queen-raae/gatsby-plugin-let-it-snow/compare/v0.4.1...v0.5.0) (2021-12-03)
+
+
+### Features
+
+* add duration option, closes [#4](https://github.com/queen-raae/gatsby-plugin-let-it-snow/issues/4) ([#16](https://github.com/queen-raae/gatsby-plugin-let-it-snow/issues/16)) ([e9478fa](https://github.com/queen-raae/gatsby-plugin-let-it-snow/commit/e9478fa85f195ad839b19f9a51616372d462ef64))
+
 ## [0.4.1](https://github.com/queen-raae/gatsby-plugin-let-it-snow/compare/v0.4.0...v0.4.1) (2021-12-03)
 
 
