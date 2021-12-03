@@ -38,12 +38,11 @@ const isSeason = ({ start, end }) => {
 
 export const onInitialClientRender = (_, options) => {
   const { colors, intensity, season } = options;
+  const duration = options.duration * 1000;
 
   if (!isSeason(season)) {
     return;
   }
-
-  const duration = 15 * 1000;
 
   const animationEnd = Date.now() + duration;
   let skew = 1;
