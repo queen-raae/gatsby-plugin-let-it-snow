@@ -3,12 +3,13 @@ exports.pluginOptionsSchema = ({ Joi }) => {
   return Joi.object({
     colors: Joi.array()
       .items(Joi.string())
+      .min(1)
       .default(["#fff"])
       .description("Array of hex color values"),
     season: Joi.object()
       .keys({
-        start: Joi.date(),
-        end: Joi.date(),
+        start: Joi.date().required(),
+        end: Joi.date().required(),
       })
       .default({
         start: new Date("December 1"),

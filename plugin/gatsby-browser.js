@@ -10,13 +10,6 @@ import {
   parseISO,
 } from "date-fns";
 
-const SEASON = {
-  start: new Date("December 1"),
-  end: new Date("January 4"),
-};
-
-const COLORS = ["#fff"];
-
 const isSeason = ({ start, end }) => {
   const currentDate = new Date();
   const currentYear = getYear(currentDate);
@@ -36,7 +29,7 @@ const isSeason = ({ start, end }) => {
 };
 
 export const onInitialClientRender = (_, options) => {
-  const { colors = COLORS, season = SEASON } = options;
+  const { colors, season } = options;
 
   if (!isSeason(season)) {
     return;
