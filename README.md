@@ -26,7 +26,7 @@ module.exports = {
 
 ### Colors
 
-You can pass an array of colors to use via the plugin options
+You can pass an array of colors to use via the plugin options.
 
 ```
   {
@@ -39,7 +39,8 @@ You can pass an array of colors to use via the plugin options
 
 ### Season
 
-You can pass a `start` and `end` date to determine when the snow will start and end
+You can pass a `start` and `end` date to determine when the snow will start and end.
+Note: Year will be ignored, and snow will fall each year within the configured season.
 
 ```
   {
