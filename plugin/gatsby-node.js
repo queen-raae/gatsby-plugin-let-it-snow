@@ -13,7 +13,7 @@ exports.pluginOptionsSchema = ({ Joi }) => {
       .min(5)
       .integer()
       .default(15)
-      .description("Duration of snow fall in seconds"),
+      .description("Duration of snowfall in seconds"),
     season: Joi.object()
       .keys({
         start: Joi.date().required(),
