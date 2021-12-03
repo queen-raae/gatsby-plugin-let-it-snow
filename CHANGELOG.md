@@ -1,3 +1,10 @@
+## [0.4.1](https://github.com/queen-raae/gatsby-plugin-let-it-snow/compare/v0.4.0...v0.4.1) (2021-12-03)
+
+
+### Bug Fixes
+
+* duration broken by [#11](https://github.com/queen-raae/gatsby-plugin-let-it-snow/issues/11) ([616a01f](https://github.com/queen-raae/gatsby-plugin-let-it-snow/commit/616a01f1cbadca3bd7d39e7e92bc01f5c157c036))
+
 # [0.4.0](https://github.com/queen-raae/gatsby-plugin-let-it-snow/compare/v0.3.0...v0.4.0) (2021-12-03)
 
 
