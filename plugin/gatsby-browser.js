@@ -11,21 +11,29 @@ import {
 } from "date-fns";
 
 const isSeason = ({ start, end }) => {
-  const currentDate = new Date();
-  const currentYear = getYear(currentDate);
+  try {
+    const currentDate = new Date();
+    const currentYear = getYear(currentDate);
 
-  // Ignore year from config dates
-  const startDate = setYear(parseISO(start), currentYear);
-  let endDate = setYear(parseISO(end), currentYear);
+    // Ignore year from config dates
+    const startDate = setYear(parseISO(start), currentYear);
+    let endDate = setYear(parseISO(end), currentYear);
 
-  if (isBefore(endDate, startDate)) {
-    endDate = addYears(endDate, 1);
+    if (isBefore(endDate, startDate)) {
+      endDate = addYears(endDate, 1);
+    }
+
+    return isWithinInterval(currentDate, {
+      start: startDate,
+      end: endDate,
+    });
+  } catch (error) {
+    console.warn(
+      "Problem with @raae/gatsby-plugin-let-it-snow season configuration:",
+      error.message
+    );
+    return false;
   }
-
-  return isWithinInterval(currentDate, {
-    start: startDate,
-    end: endDate,
-  });
 };
 
 export const onInitialClientRender = (_, options) => {
