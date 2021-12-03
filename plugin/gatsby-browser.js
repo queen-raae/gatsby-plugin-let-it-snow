@@ -43,9 +43,9 @@ export const onInitialClientRender = (_, options) => {
     return;
   }
 
-  const now = Date.now();
   const duration = 15 * 1000;
-  const animationEnd = now + duration;
+
+  const animationEnd = Date.now() + duration;
   let skew = 1;
 
   function randomInRange(min, max) {
@@ -53,7 +53,7 @@ export const onInitialClientRender = (_, options) => {
   }
 
   const frame = () => {
-    const timeLeft = animationEnd - now;
+    const timeLeft = animationEnd - Date.now();
     const ticks = Math.max(200, 500 * (timeLeft / duration));
     skew = Math.max(0.8, skew - 0.001);
 
