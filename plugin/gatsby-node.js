@@ -6,6 +6,9 @@ exports.pluginOptionsSchema = ({ Joi }) => {
       .min(1)
       .default(["#fff"])
       .description("Array of hex color values"),
+    intensity: Joi.string()
+      .valid("regular", "light", "blizzard")
+      .default("regular"),
     season: Joi.object()
       .keys({
         start: Joi.date().required(),
@@ -15,6 +18,6 @@ exports.pluginOptionsSchema = ({ Joi }) => {
         start: new Date("December 1"),
         end: new Date("January 4"),
       })
-      .description("Start and end date for when snow should be visible"),
+      .description("Start and end date for when snow should be activated"),
   });
 };
