@@ -1,9 +1,46 @@
 // https://www.gatsbyjs.com/docs/reference/config-files/gatsby-browser/
 
 import confetti from "canvas-confetti";
+import {
+  addYears,
+  getYear,
+  setYear,
+  isBefore,
+  isWithinInterval,
+  parseISO,
+} from "date-fns";
+
+const SEASON = {
+  start: new Date("December 1"),
+  end: new Date("January 4"),
+};
+
+const COLORS = ["#fff"];
+
+const isSeason = ({ start, end }) => {
+  const currentDate = new Date();
+  const currentYear = getYear(currentDate);
+
+  // Ignore year from config dates
+  const startDate = setYear(parseISO(start), currentYear);
+  let endDate = setYear(parseISO(end), currentYear);
+
+  if (isBefore(endDate, startDate)) {
+    endDate = addYears(endDate, 1);
+  }
+
+  return isWithinInterval(currentDate, {
+    start: startDate,
+    end: endDate,
+  });
+};
 
 export const onInitialClientRender = (_, options) => {
-  const { colors = ["#ffffff"], season } = options;
+  const { colors = COLORS, season = SEASON } = options;
+
+  if (!isSeason(season)) {
+    return;
+  }
 
   const now = Date.now();
   const duration = 15 * 1000;
@@ -41,14 +78,5 @@ export const onInitialClientRender = (_, options) => {
     }
   };
 
-  if (season) {
-    if (
-      new Date(now).getTime() >= new Date(season.start).getTime() &&
-      new Date(now).getTime() <= new Date(season.end).getTime()
-    ) {
-      frame();
-    }
-  } else {
-    frame();
-  }
+  frame();
 };
