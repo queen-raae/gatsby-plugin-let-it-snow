@@ -10,9 +10,10 @@ exports.pluginOptionsSchema = ({ Joi }) => {
       .valid("regular", "light", "blizzard")
       .default("regular"),
     duration: Joi.number()
-      .min(5 * 1000)
+      .min(5)
       .integer()
-      .default(15 * 1000),
+      .default(15)
+      .description("Duration of snow fall in seconds"),
     season: Joi.object()
       .keys({
         start: Joi.date().required(),

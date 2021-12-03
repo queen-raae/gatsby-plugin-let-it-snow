@@ -37,7 +37,8 @@ const isSeason = ({ start, end }) => {
 };
 
 export const onInitialClientRender = (_, options) => {
-  const { colors, intensity, duration, season } = options;
+  const { colors, intensity, season } = options;
+  const duration = options.duration * 1000;
 
   if (!isSeason(season)) {
     return;
