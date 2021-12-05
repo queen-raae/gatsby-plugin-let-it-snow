@@ -10,10 +10,9 @@ import {
   parseISO,
 } from "date-fns";
 
-const isSeason = ({ start, end }) => {
+export const isSeason = (date, { start, end }) => {
   try {
-    const currentDate = new Date();
-    const currentYear = getYear(currentDate);
+    const currentYear = getYear(date);
 
     // Ignore year from config dates
     const startDate = setYear(parseISO(start), currentYear);
@@ -23,7 +22,7 @@ const isSeason = ({ start, end }) => {
       endDate = addYears(endDate, 1);
     }
 
-    return isWithinInterval(currentDate, {
+    return isWithinInterval(date, {
       start: startDate,
       end: endDate,
     });
@@ -40,7 +39,7 @@ export const onInitialClientRender = (_, options) => {
   const { colors, intensity, season } = options;
   const duration = options.duration * 1000;
 
-  if (!isSeason(season)) {
+  if (!isSeason(new Date(), season)) {
     return;
   }
 
