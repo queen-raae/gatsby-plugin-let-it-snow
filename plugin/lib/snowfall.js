@@ -9,6 +9,10 @@ export const animationFrame = (options, currentTimestamp = Date.now()) => {
   const newSkew = Math.max(0.8, skew - 0.001);
   const ticks = Math.max(200, 500 * (timeLeft / duration));
 
+  if (timeLeft <= 0) {
+    return;
+  }
+
   const intensityValues = {
     startVelocity: 0,
     gravity: randomInRange(0.4, 0.6),
@@ -42,9 +46,9 @@ export const animationFrame = (options, currentTimestamp = Date.now()) => {
     disableForReducedMotion: true,
   });
 
-  if (timeLeft > 0) {
-    requestAnimationFrame(() => animationFrame({ ...options }));
-  }
+  requestAnimationFrame(() => {
+    animationFrame({ ...options });
+  });
 };
 
 export default (options) => {
