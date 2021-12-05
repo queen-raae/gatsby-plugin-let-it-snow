@@ -5,12 +5,19 @@
     "plugin"
   ],
   "scripts": {
+    "test": "jest --watch",
     "develop": "npm run develop -w demo",
     "semantic-release": "semantic-release"
   },
   "devDependencies": {
     "@semantic-release/changelog": "6.0.1",
     "@semantic-release/git": "10.0.1",
+    "babel-jest": "27.4.2",
+    "babel-preset-gatsby": "2.3.0",
+    "gatsby-plugin-utils": "2.3.0",
+    "identity-obj-proxy": "3.0.0",
+    "jest": "27.4.3",
+    "react-test-renderer": "17.0.2",
     "semantic-release": "^18.0.0"
   },
   "repository": {
