@@ -1,49 +1,50 @@
-import { isSeason } from "./gatsby-browser";
+import { addDays } from "date-fns";
+import snowfall from "./lib/snowfall";
+import { onInitialClientRender } from "./gatsby-browser";
 
-describe("isSeason", () => {
-  it("within season even with mismatching years", () => {
-    expect(
-      isSeason(new Date("December 1"), {
-        start: "2021-12-01",
-        end: "2026-01-10",
-      })
-    ).toBe(true);
+jest.mock("./lib/snowfall");
 
-    expect(
-      isSeason(new Date("January 1"), {
-        start: "2021-12-01",
-        end: "2026-01-10",
-      })
-    ).toBe(true);
-
-    expect(
-      isSeason(new Date("May 17"), {
-        start: "2021-05-01",
-        end: "2026-06-10",
-      })
-    ).toBe(true);
+describe("onInitialClientRender", () => {
+  afterEach(() => {
+    jest.clearAllMocks();
   });
 
-  it("outside season even with mismatching years", () => {
-    expect(
-      isSeason(new Date("November 30"), {
-        start: "2021-12-01",
-        end: "2026-01-10",
-      })
-    ).toBe(false);
+  it("activates snowfall when in season", () => {
+    const today = new Date();
+    const pluginOptions = {
+      colors: ["fff"],
+      intensity: "blizzard",
+      duration: 10,
+      season: {
+        start: addDays(today, -1).toISOString(),
+        end: addDays(today, +1).toISOString(),
+      },
+    };
 
-    expect(
-      isSeason(new Date("January 11"), {
-        start: "2021-12-01",
-        end: "2026-01-10",
-      })
-    ).toBe(false);
+    onInitialClientRender(null, pluginOptions);
 
-    expect(
-      isSeason(new Date("July 10"), {
-        start: "2021-05-01",
-        end: "2026-06-10",
-      })
-    ).toBe(false);
+    expect(snowfall).toBeCalledTimes(1);
+    expect(snowfall).toBeCalledWith({
+      colors: ["fff"],
+      intensity: "blizzard",
+      duration: 10 * 1000,
+    });
+  });
+
+  it("does not activate snowfall outside the season", () => {
+    const today = new Date();
+    const pluginOptions = {
+      colors: ["fff"],
+      intensity: "blizzard",
+      duration: 10,
+      season: {
+        start: addDays(today, -10).toISOString(),
+        end: addDays(today, -1).toISOString(),
+      },
+    };
+
+    onInitialClientRender(null, pluginOptions);
+
+    expect(snowfall).toBeCalledTimes(0);
   });
 });
