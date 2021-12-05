@@ -7,7 +7,7 @@
   "scripts": {
     "test": "jest --watch",
     "develop": "npm run develop -w demo",
-    "semantic-release": "semantic-release"
+    "semantic-release": "jest && semantic-release"
   },
   "devDependencies": {
     "@semantic-release/changelog": "6.0.1",
