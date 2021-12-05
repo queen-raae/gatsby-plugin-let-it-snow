@@ -22,10 +22,15 @@ export const isSeason = (date, { start, end }) => {
       endDate = addYears(endDate, 1);
     }
 
-    return isWithinInterval(date, {
+    const interval = {
       start: startDate,
       end: endDate,
-    });
+    };
+
+    return (
+      isWithinInterval(date, interval) ||
+      isWithinInterval(addYears(date, 1), interval)
+    );
   } catch (error) {
     console.warn(
       "Problem with @raae/gatsby-plugin-let-it-snow season configuration:",
