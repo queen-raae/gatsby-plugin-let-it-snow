@@ -5,7 +5,7 @@
     "plugin"
   ],
   "scripts": {
-    "test": "jest",
+    "test": "jest --watch",
     "develop": "npm run develop -w demo",
     "semantic-release": "jest && semantic-release"
   },
