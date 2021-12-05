@@ -1,3 +1,10 @@
+## [0.5.1](https://github.com/queen-raae/gatsby-plugin-let-it-snow/compare/v0.5.0...v0.5.1) (2021-12-05)
+
+
+### Bug Fixes
+
+* season bug, closes [#26](https://github.com/queen-raae/gatsby-plugin-let-it-snow/issues/26) ([#27](https://github.com/queen-raae/gatsby-plugin-let-it-snow/issues/27)) ([8eaa3fb](https://github.com/queen-raae/gatsby-plugin-let-it-snow/commit/8eaa3fb57d7d5161c1eaaa80df11e299f189c952))
+
 # [0.5.0](https://github.com/queen-raae/gatsby-plugin-let-it-snow/compare/v0.4.1...v0.5.0) (2021-12-03)
 
 
