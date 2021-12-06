@@ -3,7 +3,7 @@ module.exports = {
     {
       resolve: "@raae/gatsby-plugin-let-it-snow",
       options: {
-        colors: ["#fff", "#ffb6c1"],
+        colors: ["#EBDEF0", "--snow1", "--snow2", "--snow3"],
         duration: 18,
         season: {
           start: new Date("December 2, 2023"),
