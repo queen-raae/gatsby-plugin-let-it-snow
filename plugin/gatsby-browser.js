@@ -1,6 +1,6 @@
 // https://www.gatsbyjs.com/docs/reference/config-files/gatsby-browser/
 
-import { isSeason } from "./lib/utils";
+import { getCssVariable, isSeason } from "./lib/utils";
 import snowfall from "./lib/snowfall";
 
 export const onInitialClientRender = (_, pluginOptions) => {
@@ -10,5 +10,15 @@ export const onInitialClientRender = (_, pluginOptions) => {
     return;
   }
 
-  snowfall({ colors, intensity, duration: duration * 1000 });
+  const colorsMapped = colors
+    .map((color) => {
+      if (color.startsWith("--")) {
+        return getCssVariable(color);
+      } else {
+        return color;
+      }
+    })
+    .filter((color) => !!color);
+
+  snowfall({ colors: colorsMapped, intensity, duration: duration * 1000 });
 };
