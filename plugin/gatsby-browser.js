@@ -10,15 +10,5 @@ export const onInitialClientRender = (_, pluginOptions) => {
     return;
   }
 
-  const colorsMapped = colors
-    .map((color) => {
-      if (color.startsWith("--")) {
-        return getCssVariable(color);
-      } else {
-        return color;
-      }
-    })
-    .filter((color) => !!color);
-
-  snowfall({ colors: colorsMapped, intensity, duration: duration * 1000 });
+  snowfall({ colors, intensity, duration: duration * 1000 });
 };

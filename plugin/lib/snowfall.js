@@ -1,5 +1,5 @@
 import confetti from "canvas-confetti";
-import { randomInRange } from "./utils";
+import { randomInRange, getCssVariable } from "./utils";
 
 export const animationFrame = (options, currentTimestamp = Date.now()) => {
   const { animationEnd, duration, skew = 1 } = options;
@@ -12,6 +12,16 @@ export const animationFrame = (options, currentTimestamp = Date.now()) => {
   if (timeLeft <= 0) {
     return;
   }
+
+  const currentColors = colors
+    .map((color) => {
+      if (color.startsWith("--")) {
+        return getCssVariable(color);
+      } else {
+        return color;
+      }
+    })
+    .filter((color) => !!color);
 
   const intensityValues = {
     startVelocity: 0,
@@ -40,7 +50,7 @@ export const animationFrame = (options, currentTimestamp = Date.now()) => {
       // since particles fall down, skew start toward the top
       y: Math.random() * newSkew - 0.2,
     },
-    colors: [colors[Math.floor(randomInRange(0, colors.length))]],
+    colors: [currentColors[Math.floor(randomInRange(0, currentColors.length))]],
     shapes: ["circle"],
     ...intensityValues,
     disableForReducedMotion: true,
