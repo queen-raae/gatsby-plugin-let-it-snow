@@ -1,3 +1,10 @@
+# [0.6.0](https://github.com/queen-raae/gatsby-plugin-let-it-snow/compare/v0.5.1...v0.6.0) (2021-12-07)
+
+
+### Features
+
+* css var support, closes [#30](https://github.com/queen-raae/gatsby-plugin-let-it-snow/issues/30) ([#31](https://github.com/queen-raae/gatsby-plugin-let-it-snow/issues/31)) ([3f79993](https://github.com/queen-raae/gatsby-plugin-let-it-snow/commit/3f79993b50c5202bd1944251b7a2ad135b8689e0))
+
 ## [0.5.1](https://github.com/queen-raae/gatsby-plugin-let-it-snow/compare/v0.5.0...v0.5.1) (2021-12-05)
 
 
