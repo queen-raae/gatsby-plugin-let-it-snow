@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { getColor, setColor } from "../utils/colors";
 
 const Colors = () => {
@@ -6,6 +6,21 @@ const Colors = () => {
     snow1: getColor("snow1"),
     snow2: getColor("snow2"),
   });
+
+  useEffect(() => {
+    const mql = window.matchMedia("(prefers-color-scheme: dark)");
+
+    const onChange = () => {
+      setColors({
+        snow1: getColor("snow1"),
+        snow2: getColor("snow2"),
+      });
+    };
+
+    mql.addEventListener("change", onChange);
+
+    return () => mql.removeEventListener("change", onChange);
+  }, []);
 
   const onChange = (event) => {
     setColors({
