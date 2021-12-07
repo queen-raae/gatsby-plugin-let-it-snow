@@ -118,9 +118,9 @@ describe("pluginOptionsSchema", () => {
   });
 
   describe("duration", () => {
-    it("valid for infinity", async () => {
+    it("valid for infinite", async () => {
       const options = {
-        duration: "infinity",
+        duration: "infinite",
       };
       const { isValid } = await testPluginOptionsSchema(
         pluginOptionsSchema,
@@ -184,7 +184,7 @@ describe("pluginOptionsSchema", () => {
       ]);
     });
 
-    it("invalid for non int, non infinity string", async () => {
+    it("invalid for non int, non infinite string", async () => {
       const options = {
         duration: "test",
       };
@@ -194,7 +194,7 @@ describe("pluginOptionsSchema", () => {
       );
 
       expect(isValid).toBe(false);
-      expect(errors).toEqual([`"duration" must be one of [infinity, number]`]);
+      expect(errors).toEqual([`"duration" must be one of [infinite, number]`]);
     });
   });
 
