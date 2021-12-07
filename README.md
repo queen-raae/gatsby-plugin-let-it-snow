@@ -60,14 +60,15 @@ Default value if non given: "regular"
 
 ### Duration
 
-You can configure the duration of the snowfall (as seconds).
-Default value if non given: 15
+You can choose the duration of the snowfall.
+**Type:** Integer (seconds) or the string "infinite"
+**Default:** `15`
 
 ```
   {
     resolve: "@raae/gatsby-plugin-let-it-snow",
     options: {
-      duration: 10,
+      duration: 30,
     },
   },
 ```
