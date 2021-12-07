@@ -22,24 +22,39 @@ describe("snowfall", () => {
     jest.clearAllMocks();
   });
 
-  it("not an infinite loop", () => {
+  it("not an infinite loop when duration is set", () => {
     // Will exeed maximum stack if infinite
-    snowfall(OPTIONS);
+    snowfall({
+      duration: 1,
+    });
     expect(confetti).toBeCalled();
     expect(global.requestAnimationFrame).toBeCalled();
   });
 
   describe("animationFrame", () => {
-    it("when time left call confetti, recurrsion and get css variables", () => {
-      animationFrame({ animationEnd: 6, ...OPTIONS }, 5);
+    it("calls confetti and loops when time left", () => {
+      animationFrame({ animationEnd: 6 }, 5);
+
+      expect(confetti).toBeCalledTimes(1);
+      expect(global.requestAnimationFrame).toBeCalledTimes(1);
+    });
+
+    it("calls getCssVariable when appropriate when time left", () => {
+      animationFrame(
+        {
+          animationEnd: 6,
+          colors: ["fff", "--snow-color-1", "--snow-color-2"],
+        },
+        5
+      );
 
       expect(confetti).toBeCalledTimes(1);
       expect(global.requestAnimationFrame).toBeCalledTimes(1);
       expect(getCssVariable).toBeCalledTimes(2);
     });
 
-    it("when no time left do not call confetti and recurrsion", () => {
-      animationFrame({ animationEnd: 5, ...OPTIONS }, 5);
+    it("does not call confetti and does not loop when no time left", () => {
+      animationFrame({ animationEnd: 5 }, 5);
 
       expect(confetti).toBeCalledTimes(0);
       expect(global.requestAnimationFrame).toBeCalledTimes(0);
