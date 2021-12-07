@@ -1,11 +1,18 @@
 import confetti from "canvas-confetti";
 import snowfall, { animationFrame } from "./snowfall";
+import { getCssVariable } from "./utils";
 
+jest.mock("./utils", () => {
+  return {
+    ...jest.requireActual("./utils"),
+    getCssVariable: jest.fn(),
+  };
+});
 jest.mock("canvas-confetti");
 global.requestAnimationFrame = jest.fn((cb) => cb());
 
 const OPTIONS = {
-  colors: ["fff"],
+  colors: ["fff", "--snow-color-1", "--snow-color-2"],
   intensity: "blizzard",
   duration: 1,
 };
@@ -23,11 +30,12 @@ describe("snowfall", () => {
   });
 
   describe("animationFrame", () => {
-    it("when time left call confetti and recurrsion", () => {
+    it("when time left call confetti, recurrsion and get css variables", () => {
       animationFrame({ animationEnd: 6, ...OPTIONS }, 5);
 
       expect(confetti).toBeCalledTimes(1);
       expect(global.requestAnimationFrame).toBeCalledTimes(1);
+      expect(getCssVariable).toBeCalledTimes(2);
     });
 
     it("when no time left do not call confetti and recurrsion", () => {

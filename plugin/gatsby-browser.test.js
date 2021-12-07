@@ -9,42 +9,44 @@ describe("onInitialClientRender", () => {
     jest.clearAllMocks();
   });
 
-  it("activates snowfall when in season", () => {
-    const today = new Date();
-    const pluginOptions = {
-      colors: ["fff"],
-      intensity: "blizzard",
-      duration: 10,
-      season: {
-        start: addDays(today, -1).toISOString(),
-        end: addDays(today, +1).toISOString(),
-      },
-    };
+  describe("season option", () => {
+    it("activates snowfall when in season", () => {
+      const today = new Date();
+      const pluginOptions = {
+        colors: ["fff"],
+        intensity: "blizzard",
+        duration: 10,
+        season: {
+          start: addDays(today, -1).toISOString(),
+          end: addDays(today, +1).toISOString(),
+        },
+      };
 
-    onInitialClientRender(null, pluginOptions);
+      onInitialClientRender(null, pluginOptions);
 
-    expect(snowfall).toBeCalledTimes(1);
-    expect(snowfall).toBeCalledWith({
-      colors: ["fff"],
-      intensity: "blizzard",
-      duration: 10 * 1000,
+      expect(snowfall).toBeCalledTimes(1);
+      expect(snowfall).toBeCalledWith({
+        colors: ["fff"],
+        intensity: "blizzard",
+        duration: 10 * 1000,
+      });
     });
-  });
 
-  it("does not activate snowfall outside the season", () => {
-    const today = new Date();
-    const pluginOptions = {
-      colors: ["fff"],
-      intensity: "blizzard",
-      duration: 10,
-      season: {
-        start: addDays(today, -10).toISOString(),
-        end: addDays(today, -1).toISOString(),
-      },
-    };
+    it("does not activate snowfall outside the season", () => {
+      const today = new Date();
+      const pluginOptions = {
+        colors: ["fff"],
+        intensity: "blizzard",
+        duration: 10,
+        season: {
+          start: addDays(today, -10).toISOString(),
+          end: addDays(today, -1).toISOString(),
+        },
+      };
 
-    onInitialClientRender(null, pluginOptions);
+      onInitialClientRender(null, pluginOptions);
 
-    expect(snowfall).toBeCalledTimes(0);
+      expect(snowfall).toBeCalledTimes(0);
+    });
   });
 });

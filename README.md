@@ -30,13 +30,15 @@ module.exports = {
 
 ### Colors
 
-You can pass an array of colors to use via the plugin options.
+You can decide the color of the snow flakes.
+**Type:**: An array of hex colors, or css variable names resolving to hex colors.
+**Default:** `["#fff"]`
 
 ```
   {
     resolve: "@raae/gatsby-plugin-let-it-snow",
     options: {
-      colors: ["#fff000", "#ff00ff", "#00ff00"],
+      colors: ["#fff000", "--snow-color-1", "--snow-color-2"],
     },
   },
 ```

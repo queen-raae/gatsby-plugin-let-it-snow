@@ -40,3 +40,9 @@ export const isSeason = (date, { start, end }) => {
     return false;
   }
 };
+
+export const getCssVariable = (color) => {
+  return getComputedStyle(document.documentElement)
+    .getPropertyValue(color)
+    .trim();
+};
