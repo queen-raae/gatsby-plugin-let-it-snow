@@ -60,8 +60,8 @@ Default value if non given: "regular"
 
 ### Duration
 
-You can choose the duration of the snowfall.
-**Type:** Integer (seconds) or the string "infinite"
+You can choose the duration of the snowfall.  
+**Type:** Integer (seconds) or the string `"infinite"`  
 **Default:** `15`
 
 ```
