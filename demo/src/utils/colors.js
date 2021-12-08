@@ -1,4 +1,6 @@
 const getColor = (name) => {
+  if (typeof getComputedStyle !== "function") return;
+
   return getComputedStyle(document.documentElement)
     .getPropertyValue(`--${name}`)
     .trim();
