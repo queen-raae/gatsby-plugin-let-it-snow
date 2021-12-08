@@ -1,9 +1,11 @@
 import React from "react";
 import { Link } from "gatsby";
+import Colors from "../components/colors";
 
 const AnotherPage = () => {
   return (
     <main>
+      <Colors />
       <section>
         <h1>
           <span role="img" aria-label="snowflake emojii">

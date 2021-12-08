@@ -9,7 +9,7 @@
     --color-bg: #412f20;
     --color: #fffaf0;
     --snow1: #e74c3c;
-    --snow2: #fff;
+    --snow2: #ffffff;
   }
 }
 
@@ -61,4 +61,13 @@ p {
 
 span[role="img"] {
   padding: 0 0.15em;
+}
+
+.colors {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.5em;
 }
