@@ -118,6 +118,18 @@ describe("pluginOptionsSchema", () => {
   });
 
   describe("duration", () => {
+    it("valid for infinite", async () => {
+      const options = {
+        duration: "infinite",
+      };
+      const { isValid } = await testPluginOptionsSchema(
+        pluginOptionsSchema,
+        options
+      );
+
+      expect(isValid).toBe(true);
+    });
+
     it("valid for int over 4", async () => {
       const options = {
         duration: 10,
@@ -152,7 +164,9 @@ describe("pluginOptionsSchema", () => {
       );
 
       expect(isValid).toBe(false);
-      expect(errors).toEqual([`"duration" must be greater than or equal to 5`]);
+      expect(errors).toEqual([
+        `"duration" does not match any of the allowed types`,
+      ]);
     });
 
     it("invalid for float", async () => {
@@ -166,12 +180,11 @@ describe("pluginOptionsSchema", () => {
 
       expect(isValid).toBe(false);
       expect(errors).toEqual([
-        `"duration" must be an integer`,
-        `"duration" must be greater than or equal to 5`,
+        `"duration" does not match any of the allowed types`,
       ]);
     });
 
-    it("invalid for non int string", async () => {
+    it("invalid for non int, non infinite string", async () => {
       const options = {
         duration: "test",
       };
@@ -181,7 +194,7 @@ describe("pluginOptionsSchema", () => {
       );
 
       expect(isValid).toBe(false);
-      expect(errors).toEqual([`"duration" must be a number`]);
+      expect(errors).toEqual([`"duration" must be one of [infinite, number]`]);
     });
   });
 

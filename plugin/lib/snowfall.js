@@ -3,11 +3,16 @@ import { randomInRange, getCssVariable } from "./utils";
 
 export const animationFrame = (options, currentTimestamp = Date.now()) => {
   const { animationEnd, duration, skew = 1 } = options;
-  const { colors, intensity } = options;
+  const { colors = [], intensity } = options;
 
   const timeLeft = animationEnd - currentTimestamp;
   const newSkew = Math.max(0.8, skew - 0.001);
-  const ticks = Math.max(200, 500 * (timeLeft / duration));
+
+  // If duration is set to infinity durationEnd i NaN,
+  // resulting in timeLeft NaN
+  const ticks = isNaN(timeLeft)
+    ? Math.max(200, 500 * Math.random())
+    : Math.max(200, 500 * (timeLeft / duration));
 
   if (timeLeft <= 0) {
     return;

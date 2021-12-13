@@ -25,11 +25,6 @@ describe("onInitialClientRender", () => {
       onInitialClientRender(null, pluginOptions);
 
       expect(snowfall).toBeCalledTimes(1);
-      expect(snowfall).toBeCalledWith({
-        colors: ["fff"],
-        intensity: "blizzard",
-        duration: 10 * 1000,
-      });
     });
 
     it("does not activate snowfall outside the season", () => {
@@ -47,6 +42,30 @@ describe("onInitialClientRender", () => {
       onInitialClientRender(null, pluginOptions);
 
       expect(snowfall).toBeCalledTimes(0);
+    });
+
+    describe("duration option", () => {
+      it("activates snowfall when in season", () => {
+        const today = new Date();
+        const pluginOptions = {
+          colors: ["fff"],
+          intensity: "blizzard",
+          duration: "infinity",
+          season: {
+            start: addDays(today, -1).toISOString(),
+            end: addDays(today, +1).toISOString(),
+          },
+        };
+
+        onInitialClientRender(null, pluginOptions);
+
+        expect(snowfall).toBeCalledTimes(1);
+        expect(snowfall).toBeCalledWith({
+          colors: ["fff"],
+          intensity: "blizzard",
+          duration: NaN,
+        });
+      });
     });
   });
 });
