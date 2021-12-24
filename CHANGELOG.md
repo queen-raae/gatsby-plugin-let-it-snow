@@ -1,3 +1,10 @@
+## [0.6.1](https://github.com/queen-raae/gatsby-plugin-let-it-snow/compare/v0.6.0...v0.6.1) (2021-12-24)
+
+
+### Bug Fixes
+
+* change min duration from 5 to 1 ([#37](https://github.com/queen-raae/gatsby-plugin-let-it-snow/issues/37)) ([46b8d62](https://github.com/queen-raae/gatsby-plugin-let-it-snow/commit/46b8d62543329bc17e559aa43e8b531c102d9e2d))
+
 # [0.6.0](https://github.com/queen-raae/gatsby-plugin-let-it-snow/compare/v0.5.1...v0.6.0) (2021-12-07)
 
 
