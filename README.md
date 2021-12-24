@@ -1,6 +1,6 @@
 # @raae/gatsby-plugin-let-it-snow
 
-> Add some old school fun to your site with falling snow this holiday season ❄️
+> Add some old school cheer to your site with falling snow this holiday season ❄️❄️❄️
 
 Heavily inspired by my memory of snow falling on my WordPress blog way back when...
 
@@ -18,7 +18,11 @@ or
 
 ## How to use
 
+Add the plugin to the plugins array in your `gatsby.config`.
+
 ```
+// gatsby.config.js
+
 module.exports = {
   plugins: [
     `@raae/gatsby-plugin-let-it-snow`
@@ -30,94 +34,103 @@ module.exports = {
 
 ### Colors
 
-You can decide the color of the snow flakes.
-**Type:**: An array of hex colors, or css variable names resolving to hex colors.
+You can decide the color of the snow flakes. Each snowflake gets a random color from the list.  
+**Type:** An array of hex colors, or css variable names resolving to hex colors.  
 **Default:** `["#fff"]`
 
 ```
-  {
-    resolve: "@raae/gatsby-plugin-let-it-snow",
-    options: {
-      colors: ["#fff000", "--snow-color-1", "--snow-color-2"],
+// gatsby.config.js
+
+module.exports = {
+  plugins: [
+    {
+      resolve: "@raae/gatsby-plugin-let-it-snow",
+      options: {
+        colors: ["#fff000", "--snow-color-1", "--snow-color-2"],
+      },
     },
-  },
+  ],
+};
 ```
 
 ### Intensity
 
-You can choose the intensity of the snow.
-Accepted values in increasing intensity: "light", "regular" and "blizzard".
-Default value if non given: "regular"
+You can choose the intensity of the snow.  
+**Type**: One of "light", "regular" or "blizzard".  
+**Default:** `"regular"`
 
 ```
-  {
-    resolve: "@raae/gatsby-plugin-let-it-snow",
-    options: {
-      intensity: "blizzard",
+// gatsby.config.js
+
+module.exports = {
+  plugins: [
+    {
+      resolve: "@raae/gatsby-plugin-let-it-snow",
+      options: {
+        intensity: "blizzard",
+      },
     },
-  },
+  ],
+};
 ```
 
 ### Duration
 
-You can configure the duration of the snowfall (as seconds).
-Default value if non given: 15
+You can decide how long the snow should fall for.  
+**Type**: Positive integer  
+**Default:** `15`
 
 ```
-  {
-    resolve: "@raae/gatsby-plugin-let-it-snow",
-    options: {
-      duration: 10,
+// gatsby.config.js
+
+module.exports = {
+  plugins: [
+    {
+      resolve: "@raae/gatsby-plugin-let-it-snow",
+      options: {
+        duration: 10,
+      },
     },
-  },
+  ],
+};
 ```
 
 ### Season
 
-You can pass a `start` and `end` date to determine when the snow will start and end.
-Note: Year will be ignored, and snow will fall each year within the configured season.
+You may decide the time of year the snow should fall.  
+**Type**: Dates, but year will be ignored.  
+**Default:** `{ start: new Date("December 1"), end: new Date("January 4") }`  
+**Important:** Year will be ignored, and snow will fall each year within the configured season.
 
 ```
-  {
-    resolve: "@raae/gatsby-plugin-let-it-snow",
-    options: {
-      season: {
-        start: new Date("December 1, 2021 00:00:10"),
-        end: new Date("December 31, 2021 23:59:50"),
+// gatsby.config.js
+
+module.exports = {
+  plugins: [
+    {
+      resolve: "@raae/gatsby-plugin-let-it-snow",
+      options: {
+        season: {
+          start: new Date("November 15"),
+          end: new Date("January 15"),
+        },
       },
     },
-  },
+  ],
+};
 ```
 
 ## Powered by Canvas Confetti 🎉
 
 Under the hood this plugin uses the amazing [Canvas Confetti](https://github.com/catdad/canvas-confetti) by [@kirilv](https://twitter.com/kirilv).
 
-## How to contribute with code
+## How to contribute
 
-### Getting started
-
-- Fork the repo
-- Clone your fork
-- Install the packages: `yarn install`
-- Run the demo: `yarn develop`
-
-To be able to have both the demo and plugin in the same repo we use [yarn workspaces](https://classic.yarnpkg.com/lang/en/docs/workspaces/).
-
-- Plugin code is in the `/plugin` folder,
-- and the demo code is in the `/demo` folder.
-
-### Do your thing
-
-Solve an [issue](https://github.com/queen-raae/gatsby-plugin-let-it-snow/issues) or do something else!
-
-### Create a Pull Request
-
-To get your changes merged into the project create a Pull Request from your fork.
-
-## How to contribute in other ways
+If you would like to contribute with code, check out `CONTRIBUTING.md`.
 
 ### Questions, Feedback and Suggestions
+
+Do not be shy!
 
 If you have any questions, feedback or suggestions head on over to [discussions](https://github.com/queen-raae/gatsby-plugin-let-it-snow/discussions).
 
