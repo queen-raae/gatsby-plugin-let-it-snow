@@ -1,3 +1,15 @@
+# [1.0.0](https://github.com/queen-raae/gatsby-plugin-let-it-snow/compare/v0.6.1...v1.0.0) (2021-12-24)
+
+
+### Documentation
+
+* update ([#38](https://github.com/queen-raae/gatsby-plugin-let-it-snow/issues/38)) ([1bebb34](https://github.com/queen-raae/gatsby-plugin-let-it-snow/commit/1bebb34e48b0ef0010feb1693058e22edba62ef2))
+
+
+### BREAKING CHANGES
+
+* Happy Holidays
+
 ## [0.6.1](https://github.com/queen-raae/gatsby-plugin-let-it-snow/compare/v0.6.0...v0.6.1) (2021-12-24)
 
 
