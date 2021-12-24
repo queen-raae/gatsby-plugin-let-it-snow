@@ -11,7 +11,7 @@ exports.pluginOptionsSchema = ({ Joi }) => {
       .default("regular"),
     duration: Joi.number()
       .integer()
-      .min(5)
+      .min(1)
       .default(15)
       .description("Duration of snowfall in seconds"),
     season: Joi.object()
