@@ -118,7 +118,7 @@ describe("pluginOptionsSchema", () => {
   });
 
   describe("duration", () => {
-    it("valid for int over 4", async () => {
+    it("valid for int over 0", async () => {
       const options = {
         duration: 10,
       };
@@ -130,7 +130,7 @@ describe("pluginOptionsSchema", () => {
       expect(isValid).toBe(true);
     });
 
-    it("valid for int string over 4", async () => {
+    it("valid for int string over 0", async () => {
       const options = {
         duration: "16",
       };
@@ -142,9 +142,9 @@ describe("pluginOptionsSchema", () => {
       expect(isValid).toBe(true);
     });
 
-    it("invalid for int under 5", async () => {
+    it("invalid for int under 1", async () => {
       const options = {
-        duration: 3,
+        duration: 0,
       };
       const { isValid, errors } = await testPluginOptionsSchema(
         pluginOptionsSchema,
@@ -152,7 +152,7 @@ describe("pluginOptionsSchema", () => {
       );
 
       expect(isValid).toBe(false);
-      expect(errors).toEqual([`"duration" must be greater than or equal to 5`]);
+      expect(errors).toEqual([`"duration" must be greater than or equal to 1`]);
     });
 
     it("invalid for float", async () => {
@@ -165,10 +165,7 @@ describe("pluginOptionsSchema", () => {
       );
 
       expect(isValid).toBe(false);
-      expect(errors).toEqual([
-        `"duration" must be an integer`,
-        `"duration" must be greater than or equal to 5`,
-      ]);
+      expect(errors).toEqual([`"duration" must be an integer`]);
     });
 
     it("invalid for non int string", async () => {
