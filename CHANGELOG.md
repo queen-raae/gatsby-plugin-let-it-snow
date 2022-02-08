@@ -1,3 +1,10 @@
+## [1.0.2](https://github.com/queen-raae/gatsby-plugin-let-it-snow/compare/v1.0.1...v1.0.2) (2022-02-08)
+
+
+### Bug Fixes
+
+* add description to plugin package file ([ea0a313](https://github.com/queen-raae/gatsby-plugin-let-it-snow/commit/ea0a313de9f1e484a524eb5bb080db57a8123982))
+
 ## [1.0.1](https://github.com/queen-raae/gatsby-plugin-let-it-snow/compare/v1.0.0...v1.0.1) (2022-02-08)
 
 # [1.0.0](https://github.com/queen-raae/gatsby-plugin-let-it-snow/compare/v0.6.1...v1.0.0) (2021-12-24)
