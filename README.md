@@ -1,12 +1,26 @@
-# @raae/gatsby-plugin-let-it-snow
+# @raae/gatsby-plugin-let-it-snow-test
 
-> Add some old school cheer to your site with falling snow this holiday season ❄️❄️❄️
+_Add some old school cheer to your site with falling snow this holiday season_ ❄️❄️❄️
 
 Heavily inspired by my memory of snow falling on my WordPress blog way back when...
 
-## A message from Queen [@raae](https://twitter.com/raae)
+&nbsp;
 
-Learn how to get the most out of Gatsby and **stay updated** on the plugin by [subscribing](https://queen.raae.codes/emails/?utm_source=readme&utm_campaign=let-it-snow) to emails from yours truly.
+## A message or two or three from Queen Raae 👑
+
+### 1-on-1 Emergency Gatsby Call
+
+Are you stuck on a reef in the sharky waters around the Gatsby islands? Check out [1-on-1 Emergency Gatsby Call](https://queen.raae.codes/gatsby-emergency/) with Queen Raae to get friendly advice you can put into action immediately from a seasoned Gatsby developer.
+
+### Stay updated and get the most out of Gatsby
+
+Learn how to get the most out of Gatsby and **stay updated** on the template by [subscribing](https://queen.raae.codes/emails/?utm_source=readme&utm_campaign=let-it-snow) to daily emails from Queen Raae and Cap'n Ola.
+
+### Video Walkthrough
+
+Watch Cap'n Ola add snow to his site on an unauthorized and rum-fueled [treasure hunt](https://youtu.be/eaZm9MC0GeE) in the sharky waters around the Gatsby islands on [YouTube](https://youtu.be/zRUxnx7pv0E).
+
+&nbsp;
 
 ## How to install
 
