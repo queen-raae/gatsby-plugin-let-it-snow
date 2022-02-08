@@ -1,7 +1,7 @@
 {
   "name": "@raae/gatsby-plugin-let-it-snow",
   "version": "1.0.1",
-  "description": "",
+  "description": "Add some old school cheer to your site with falling snow this holiday season ❄️❄️❄️",
   "main": "index.js",
   "scripts": {
     "postversion": "cp ../README.md ./README.md"
